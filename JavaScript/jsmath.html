@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function zero_negativity(array){
+            let retVal = true;
+
+            for(let item of array){
+                if(item < 0){
+                    retVal = false;
+                    break;
+                }
+            }
+
+            return retVal;
+        }
+
+        function is_even(number){
+            if(number%2 === 0)
+                return true;
+            else
+                return false;
+        }
+
+        function how_many_even(array){
+            let numberOfEven = 0;
+
+            for(let item of array){
+                if(is_even(item)) numberOfEven++
+            }
+
+            return numberOfEven;
+        }
+
+        function create_dummy_array(n){
+            var returnArray = [];
+            for(let index = 0; index < n; index++){
+                returnArray.push(Math.round(Math.random() * 10));
+            }
+
+            return returnArray;
+        }
+
+        function random_choice(array){
+            let index = -1;
+            do
+            {
+                index = Math.round(Math.random() * array.length);
+            }while(index < 0);
+            
+            return array[index];
+        }
+
+        //test 1
+        var isNegative = zero_negativity([1,2,3,-4,5]);
+        console.log(isNegative);
+
+        //test 2
+        var isEven = is_even(17);
+        console.log(isEven);
+
+        //test 3
+        let numberOfEven = how_many_even([1,2,3,4,5,6,7,12,14,16]);
+        console.log("Number of Evens: ", numberOfEven);
+
+        //test 4
+        let randomArray = create_dummy_array(8);
+        console.log(randomArray);
+
+        // test 5
+        let someArray = [71,82,43,54,95,66,7,12,34,26];
+        console.log(random_choice(someArray));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
